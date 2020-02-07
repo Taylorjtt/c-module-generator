@@ -36,6 +36,9 @@ h_file.write("""/*
 h_file.write("""#ifndef SRC_"""+className.upper()+"""_H_
 #define SRC_"""+className.upper()+"""_H_
 
+
+#include <stdio.h>
+
 """)
 
 h_file.write("""/**
@@ -63,7 +66,7 @@ typedef struct """+className.upper()+"""_OBJ *"""+className+"""Handle;
 * @return """+className+"""Handle a pointer to an """+className.upper()+"""Object
 */
 
-Handle """+className.upper()+"""_Constructor(void *pmemory, const size_t numbytes);
+"""+className+"""Handle """+className.upper()+"""_Constructor(void *pmemory, const size_t numbytes);
 
 
 
@@ -107,12 +110,12 @@ c_file.write("""/*
 
 #include \""""+className+""".h\"
 
-Handle """+className.upper()+"""_Constructor(void *pmemory, const size_t numbytes)
+"""+className+"""Handle """+className.upper()+"""_Constructor(void *pmemory, const size_t numbytes)
 {
 	"""+className+"""Handle handle;
 	"""+className.upper()+"""Object *obj;
 
-	if(numbytes < sizeof("""+className.upper()+"""Object;))
+	if(numbytes < sizeof("""+className.upper()+"""Object))
 	{
 		return (("""+className+"""Handle)NULL);
 	}
