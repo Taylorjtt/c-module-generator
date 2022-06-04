@@ -7,15 +7,14 @@ timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
 year = dateTimeObj.strftime("%Y")
 
 className = input("Enter the name of the C module\n")
+authorName = input("Enter your name")
 
 h_file = open(className+".h","w+");
 h_file.write("""/*****************************************************************************
-* Copyright (C) """+year+""" by John Taylor
+* Copyright (C) """+year+""" by Myolyn Inc
 *
 * Redistribution, modification or use of this software in source or binary
-* forms is permitted as long as the files maintain this copyright. Users are
-* permitted to modify this and use it to learn about the field of embedded
-* software. John Taylor and the University of Colorado are not liable for
+* forms is not permitted.Myolyn is not liable for
 * any misuse of this material.
 *
 *****************************************************************************/
@@ -25,7 +24,7 @@ h_file.write("""/*
  * @file """+className+""".h
  * @brief
  *
- *  @author John Taylor
+ *  @author """+authorName+"""
  * 	@date """+timestampStr+"""
  *
  */
@@ -42,7 +41,7 @@ h_file.write("""#ifndef SRC_"""+className.upper()+"""_H_
 """)
 
 h_file.write("""/**
-* @brief Structure representing an +"""+className+""" object
+* @brief Structure representing a """+className+""" object
 *
 */
 typedef struct """+className.upper()+"""_OBJ
@@ -87,12 +86,10 @@ h_file.close();
 c_file = open(className+".c","w+");
 
 c_file.write("""/*****************************************************************************
-* Copyright (C) """+year+""" by John Taylor
+* Copyright (C) """+year+""" by Myolyn Inc
 *
 * Redistribution, modification or use of this software in source or binary
-* forms is permitted as long as the files maintain this copyright. Users are
-* permitted to modify this and use it to learn about the field of embedded
-* software. John Taylor and the University of Colorado are not liable for
+* forms is not permitted.Myolyn is not liable for
 * any misuse of this material.
 *
 *****************************************************************************/
@@ -102,7 +99,7 @@ c_file.write("""/*
  * @file """+className+""".c
  * @brief
  *
- *  @author John Taylor
+ *  @author """+authorName+"""
  * 	@date """+timestampStr+"""
  *
  */
