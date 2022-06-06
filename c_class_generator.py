@@ -75,9 +75,9 @@ def writeConstructorImpl(file):
     handle = (""" + className + """Handle)pmemory;
     obj = (""" + className.upper() + """Object *)handle;
     return handle;
-    }
-    
-    """)
+}
+
+""")
 
 def writeStaticConstructorImpl(file):
 
